@@ -1,0 +1,68 @@
+Project name: c-guessing-game
+Link : https://github.com/omerwritescode/c-guessing-game
+
+Overview of the Project :
+The project is a simple Number Guessing Game, implemented in C. The purpose of the game is to provide an interactive guessing experience where the program generates a random number between 1 and 100, and the user tries to guess it. After each guess, the program gives feedback whether the guess is too high, too low, or correct. Once the user guesses the correct number, the game terminates and provides the number of guesses taken.
+
+2. High-Level Functionality
+Random Number Generation: The program generates a random number between 1 and 100 using the rand() function from stdlib.h and seeds the random number generator with srand(time(0)) to ensure that different random numbers are generated each time the game runs.
+User Input: The game asks for user input repeatedly until the correct number is guessed. Each time the user inputs a guess, the program compares it against the random number.
+Feedback: After each guess, the program tells the user whether their guess was too high, too low, or correct.
+Game Termination: When the user guesses correctly, the game ends, and the program shows how many attempts it took to find the correct number.
+
+3. Code Structure
+The code is structured with a single main function that handles everything from random number generation, input handling, feedback generation, and the loop for user interaction. There are no additional functions or modular components, making the code compact but harder to maintain or scale in larger projects.
+
+Libraries Used:
+
+stdio.h: Used for input/output functions like printf() and scanf().
+
+stdlib.h: Provides access to the rand() and srand() functions for generating random numbers.
+
+time.h: Provides the time() function used to seed the random number generator.
+
+Flow of the Program:
+
+The program starts by seeding the random number generator and generating a random number. A do-while loop is used to repeatedly ask for the user’s guess until it matches the randomly generated number. Each time, feedback is provided based on whether the guess is too high, too low, or correct. Once the user guesses correctly, the program outputs the number of attempts and terminates.
+
+4. Key Observations
+Simplicity: The project is relatively simple, ideal for beginners. It demonstrates basic input-output handling, random number generation, and the use of loops and conditionals in C programming.
+
+Single Function Design: All the logic resides within the main() function, which is fine for small projects but would benefit from modularization in larger applications. For example, separating the random number generation, user input handling, and feedback generation into distinct functions would improve maintainability and readability.
+
+No Error Handling: The program assumes that the user always enters a valid number. There is no input validation, so if the user inputs a non-numeric character, it may lead to unexpected behavior or errors.
+
+Limited Features: The game could be expanded by adding features such as:
+
+Difficulty levels (easy, medium, hard).
+
+A replay option after finishing a round.
+
+Limiting the number of guesses and terminating the game if the limit is reached.
+
+5. Potential Improvements
+Here are some areas where the project could be improved:
+
+Input Validation:
+Right now, there is no validation to ensure that the user enters a valid number. Adding error checks would prevent the program from crashing when a non-numeric value is input.
+
+Replayability:
+After the user guesses the number correctly, the program ends. It would be a good idea to prompt the user whether they would like to play again, generating a new random number and continuing the game.
+
+Difficulty Levels:
+Introducing difficulty levels would make the game more interesting. For instance:
+
+Easy: Guess a number between 1 and 50.
+
+Medium: Guess a number between 1 and 100.
+
+Hard: Guess a number between 1 and 1000.
+
+Guess Limit:
+Introduce a maximum number of guesses. If the user fails to guess correctly within a certain number of attempts, the game ends, which could add an extra layer of challenge.
+
+Modularization:
+Refactoring the code into separate functions would improve clarity and reusability. For instance, creating a separate function to handle user guesses, another for providing feedback, and one more for generating a random number would make the code easier to manage.
+
+Conclusion
+The Number Guessing Game is an excellent beginner-level project that covers fundamental concepts in C programming. It demonstrates how to use loops, conditionals, random number generation, and user input in a simple interactive format. However, as with any open-source project, there are opportunities for improvement and expansion. Adding features like error handling, modularization, difficulty levels, and replayability would enhance the user experience and make the game more engaging.
